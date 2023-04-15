@@ -8,3 +8,6 @@ include_directories("./")
 enable_testing()
 
 add_subdirectory(mergesort)
+add_subdirectory(gnomesort)
+add_subdirectory(dunmoroghsort)
+add_subdirectory(insertionsort)

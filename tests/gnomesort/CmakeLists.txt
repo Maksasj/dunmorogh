@@ -1,0 +1,28 @@
+add_executable(gnome_sort_vector_int_small gnome_sort_vector_int_small.cpp)
+target_link_libraries(gnome_sort_vector_int_small dunmorogh)
+add_test(NAME GnomeSort_Vector_Int_Small_10_Test COMMAND $<TARGET_FILE:gnome_sort_vector_int_small>)
+
+add_executable(gnome_sort_vector_int_medium gnome_sort_vector_int_medium.cpp)
+target_link_libraries(gnome_sort_vector_int_medium dunmorogh)
+add_test(NAME GnomeSort_Vector_Int_Medium_100_Test COMMAND $<TARGET_FILE:gnome_sort_vector_int_medium>)
+
+add_executable(gnome_sort_vector_int_big gnome_sort_vector_int_big.cpp)
+target_link_libraries(gnome_sort_vector_int_big dunmorogh)
+add_test(NAME GnomeSort_Vector_Int_Big_1k_Test COMMAND $<TARGET_FILE:gnome_sort_vector_int_big>)
+
+add_executable(gnome_sort_vector_int_colossal gnome_sort_vector_int_colossal.cpp)
+target_link_libraries(gnome_sort_vector_int_colossal dunmorogh)
+add_test(NAME GnomeSort_Vector_Int_Colossal_10k_Test COMMAND $<TARGET_FILE:gnome_sort_vector_int_colossal>)
+
+
+add_executable(gnome_sort_vector_string_small gnome_sort_vector_string_small.cpp)
+target_link_libraries(gnome_sort_vector_string_small dunmorogh)
+add_test(NAME GnomeSort_Vector_String_Small_10_Test COMMAND $<TARGET_FILE:gnome_sort_vector_string_small>)
+
+add_executable(gnome_sort_vector_string_medium gnome_sort_vector_string_medium.cpp)
+target_link_libraries(gnome_sort_vector_string_medium dunmorogh)
+add_test(NAME GnomeSort_Vector_String_Medium_100_Test COMMAND $<TARGET_FILE:gnome_sort_vector_string_medium>)
+
+add_executable(gnome_sort_vector_string_big gnome_sort_vector_string_big.cpp)
+target_link_libraries(gnome_sort_vector_string_big dunmorogh)
+add_test(NAME GnomeSort_Vector_String_Big_1k_Test COMMAND $<TARGET_FILE:gnome_sort_vector_string_big>)

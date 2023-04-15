@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <algorithm>
+#include <functional>
 #include <vector>
 #include <random>
 #include <chrono>
@@ -33,6 +34,17 @@ void generate_random_strings(std::vector<std::string> &vec, const unsigned long&
         vec.push_back(str);
         str.clear();
     }
+}
+
+template<typename T>
+float percent_sorted(const std::vector<T>& vec, const std::function<bool(const T& a, const T& b)>& lambda) {
+    int sorted = 0;
+
+    for (size_t i = 0; i < vec.size() - 1; i++)
+        if (lambda(vec[i], vec[i+1]))
+            ++sorted;
+
+    return static_cast<float>(sorted) / (vec.size() - 1);
 }
 
 #endif
