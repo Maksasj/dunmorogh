@@ -8,59 +8,54 @@
 
 namespace dunmorogh {
     template<typename T>
-    void merge(std::vector<T>& left, std::vector<T>& right, std::vector<T>& out, const std::function<bool(const T& a, const T& b)>& lambda) {
-        const u64 leftSize = left.size();
-        const u64 rightSize = right.size();
+    void merge(std::vector<T>& input, const std::function<bool(const T& a, const T& b)>& lambda, const i32& l, const i32& m, const i32& r) {
+        const i32 n1 = m - l + 1;
+        const i32 n2 = r - m;
 
-        u64 l = 0, r = 0, i = 0;
-        while (l < leftSize && r < rightSize) {
-            const T& firstElement = left[l];
-            const T& secondElement = right[r];
+       std::vector<T> L(n1), R(n2);
 
-            if(lambda(firstElement, secondElement)) {
-                out[i] = secondElement;
-                ++r;
+        for (i32 i = 0; i < n1; i++)
+            L[i] = input[l + i];
+        for (i32 j = 0; j < n2; j++)
+            R[j] = input[m + 1 + j];
+
+        i32 i = 0, j = 0, k = l;
+        while(i < n1 && j < n2) {
+            if(lambda(R[j], L[i])) {
+                input[k] = L[i];
+                ++i;
             } else {
-                out[i] = firstElement;
-                ++l;
+                input[k] = R[j];
+                ++j;
             }
-            ++i;
+
+            ++k;
         }
 
-        while (l < leftSize) {
-            out[i] =  left[l];
-            ++l;
-            ++i;
-        }
-        
-        while (r < rightSize) {
-            out[i] = right[r];
-            ++r;
-            ++i;
-        }
+        while(i < n1)
+            input[k++] = L[i++];
+
+        while(j < n2)
+            input[k++] = R[j++];
+    }
+
+    template<typename T>
+    void _merge_sort_iternal(std::vector<T>& input, const std::function<bool(const T& a, const T& b)>& lambda, i32 l, i32 r) {
+        if (l < r) {
+            i32 m = l + (r - l) / 2;
+            _merge_sort_iternal(input, lambda, l, m);
+            _merge_sort_iternal(input, lambda, m + 1, r);
+            merge(input, lambda, l, m, r);
+        }   
     }
 
     template<typename T>
     void merge_sort(std::vector<T>& input, const std::function<bool(const T& a, const T& b)>& lambda) {
-        const u64 length = input.size();
-        const u64 middle = length / 2;
-
-        if(length <= 1) 
+        if(input.size() <= 1) {
             return;
-        
-        std::vector<T> left;
-        std::vector<T> right;
-
-        for(i32 i = 0; i < length; i++) {
-            if(i < middle)
-                left.push_back(input[i]);
-            else
-                right.push_back(input[i]);
         }
 
-        merge_sort(left, lambda);
-        merge_sort(right, lambda);
-        merge(left, right, input, lambda);
+        _merge_sort_iternal(input, lambda, 0, input.size() - 1);
     }
 }
 
