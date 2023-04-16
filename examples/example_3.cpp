@@ -11,7 +11,7 @@ int main() {
     vector<int> data;
     generate_random_data(data, 10);
 
-    dunmorogh_sort<int>(data, std::greater<int>());
+    dunmorogh_sort<vector, int>(data, greater<int>());
     
     return 0;
 }

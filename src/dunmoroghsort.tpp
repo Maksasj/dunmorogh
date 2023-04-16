@@ -9,8 +9,8 @@
 #include "utils.h"
 
 namespace dunmorogh {
-    template<typename T>
-    void _dunmorogh_sort_iternal(std::vector<T>& input, const std::function<bool(const T& a, const T& b)>& lambda, i32 l, i32 r) {
+    template<template<class ...> class C, class T>
+    void _dunmorogh_sort_iternal(C<T>& input, const std::function<bool(const T& a, const T& b)>& lambda, i32 l, i32 r) {
         if (l < r) {
             if(r - l + 1 <= (input.size() / 16)) {
                 _insertion_sort_iternal(input, lambda, l, r + 1);
@@ -24,8 +24,8 @@ namespace dunmorogh {
         }   
     }
 
-    template<typename T>
-    void dunmorogh_sort(std::vector<T>& input, const std::function<bool(const T& a, const T& b)>& lambda) {
+    template<template<class ...> class C, class T>
+    void dunmorogh_sort(C<T>& input, const std::function<bool(const T& a, const T& b)>& lambda) {
         const u64 length = input.size();
 
         if(length <= 1) 

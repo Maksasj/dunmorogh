@@ -7,8 +7,8 @@
 #include "types.tpp"
 
 namespace dunmorogh {
-    template<typename T>
-    void merge(std::vector<T>& input, const std::function<bool(const T& a, const T& b)>& lambda, const i32& l, const i32& m, const i32& r) {
+    template<template<class ...> class C, class T>
+    void merge(C<T>& input, const std::function<bool(const T& a, const T& b)>& lambda, const i32& l, const i32& m, const i32& r) {
         const i32 n1 = m - l + 1;
         const i32 n2 = r - m;
 
@@ -39,8 +39,8 @@ namespace dunmorogh {
             input[k++] = R[j++];
     }
 
-    template<typename T>
-    void _merge_sort_iternal(std::vector<T>& input, const std::function<bool(const T& a, const T& b)>& lambda, i32 l, i32 r) {
+    template<template<class ...> class C, class T>
+    void _merge_sort_iternal(C<T>& input, const std::function<bool(const T& a, const T& b)>& lambda, i32 l, i32 r) {
         if (l < r) {
             i32 m = l + (r - l) / 2;
             _merge_sort_iternal(input, lambda, l, m);
@@ -49,8 +49,8 @@ namespace dunmorogh {
         }   
     }
 
-    template<typename T>
-    void merge_sort(std::vector<T>& input, const std::function<bool(const T& a, const T& b)>& lambda) {
+    template<template<class ...> class C, class T>
+    void merge_sort(C<T>& input, const std::function<bool(const T& a, const T& b)>& lambda) {
         if(input.size() <= 1) {
             return;
         }

@@ -14,18 +14,18 @@ int main() {
         vector<string> data;
         generate_random_strings(data, 5, 1000);
 
-        gnome_sort<string>(data, std::greater<string>());
+        gnome_sort<vector, string>(data, greater<string>());
 
-        ensure((is_container_sorted<string>(data, std::greater<string>())));
+        ensure((is_container_sorted<string>(data, greater<string>())));
     }
 
     TEST_CASE {
         vector<string> data;
         generate_random_strings(data, 5, 1000);
 
-        gnome_sort<string>(data, std::less<string>());
+        gnome_sort<vector, string>(data, less<string>());
 
-        ensure((is_container_sorted<string>(data, std::less<string>())));
+        ensure((is_container_sorted<string>(data, less<string>())));
     }
 
     return 0;

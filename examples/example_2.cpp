@@ -14,8 +14,8 @@ int main() {
     for(auto& i : data)
         cout << i << " ";
 
-    std::cout << "\n";
-    merge_sort<string>(data, std::greater<string>());
+    cout << "\n";
+    merge_sort<vector, string>(data, greater<string>());
 
     for(auto& i : data)
         cout << i << " ";

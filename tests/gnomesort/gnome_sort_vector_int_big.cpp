@@ -14,18 +14,18 @@ int main() {
         vector<int> data;
         generate_random_data(data, 1000);
 
-        gnome_sort<int>(data, std::greater<int>());
+        gnome_sort<vector, int>(data, greater<int>());
 
-        ensure((is_container_sorted<int>(data, std::greater<int>())));
+        ensure((is_container_sorted<int>(data, greater<int>())));
     }
 
     TEST_CASE {
         vector<int> data;
         generate_random_data(data, 1000);
 
-        gnome_sort<int>(data, std::less<int>());
+        gnome_sort<vector, int>(data, less<int>());
 
-        ensure((is_container_sorted<int>(data, std::less<int>())));
+        ensure((is_container_sorted<int>(data, less<int>())));
     }
 
     return 0;

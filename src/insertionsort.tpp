@@ -1,11 +1,13 @@
 #ifndef _DUNMOROGH_INSERTION_H_
 #define _DUNMOROGH_INSERTION_H_
 
+#include <functional>
+
 #include "types.tpp"
 
 namespace dunmorogh {
-    template<typename T>
-    inline void _insertion_sort_iternal(std::vector<T>& input, const std::function<bool(const T& a, const T& b)>& lambda, const i32& left, const i32& right) {
+    template<template<class ...> class C, class T>
+    inline void _insertion_sort_iternal(C<T>& input, const std::function<bool(const T& a, const T& b)>& lambda, const i32& left, const i32& right) {
         const u64 arraySize = input.size();
 
         for (i32 i = left + 1; i < right; ++i) {
@@ -21,8 +23,8 @@ namespace dunmorogh {
         }
     };
 
-    template<typename T>
-    void insertion_sort(std::vector<T>& input, const std::function<bool(const T& a, const T& b)>& lambda) {
+    template<template<class ...> class C, class T>
+    void insertion_sort(C<T>& input, const std::function<bool(const T& a, const T& b)>& lambda) {
         _insertion_sort_iternal(input, lambda, 0, input.size());
     };
 }

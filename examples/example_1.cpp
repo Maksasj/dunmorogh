@@ -13,8 +13,8 @@ int main() {
     for(int& i : data)
         cout << i << " ";
 
-    std::cout << "\n";
-    merge_sort<int>(data, std::greater<int>());
+    cout << "\n";
+    merge_sort<vector, int>(data, greater<int>());
 
     for(int& i : data)
         cout << i << " ";
