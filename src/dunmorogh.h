@@ -1,10 +1,10 @@
 #ifndef _DUNMOROGH_H_
 #define _DUNMOROGH_H_
 
-#include "mergesort.tpp"
-#include "gnomesort.tpp"
-#include "dunmoroghsort.tpp"
-#include "insertionsort.tpp"
+#include "mergesort.hpp"
+#include "gnomesort.hpp"
+#include "dunmoroghsort.hpp"
+#include "insertionsort.hpp"
 
 #include "utils.h"
 

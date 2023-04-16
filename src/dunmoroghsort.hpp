@@ -4,8 +4,8 @@
 #include <vector>
 #include <functional>
 
-#include "gnomesort.tpp"
-#include "types.tpp"
+#include "gnomesort.hpp"
+#include "types.hpp"
 #include "utils.h"
 
 namespace dunmorogh {

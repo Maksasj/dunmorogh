@@ -3,7 +3,7 @@
 
 #include <functional>
 
-#include "types.tpp"
+#include "types.hpp"
 
 namespace dunmorogh {
     template<template<class ...> class C, class T>
