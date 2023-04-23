@@ -2,4 +2,4 @@
 
 cmake --build build
 
-.\build\examples\usage_example.exe
+.\build\examples\example_4.exe

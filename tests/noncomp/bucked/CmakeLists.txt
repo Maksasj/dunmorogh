@@ -1,0 +1,23 @@
+add_executable(bucked_sort_vector_int_tiny bucked_sort_vector_int_tiny.cpp)
+target_link_libraries(bucked_sort_vector_int_tiny dunmorogh)
+add_test(NAME BuckedSort_Vector_Int_Tiny_10_Test COMMAND $<TARGET_FILE:bucked_sort_vector_int_tiny>)
+
+add_executable(bucked_sort_vector_int_small bucked_sort_vector_int_small.cpp)
+target_link_libraries(bucked_sort_vector_int_small dunmorogh)
+add_test(NAME BuckedSort_Vector_Int_Small_100_Test COMMAND $<TARGET_FILE:bucked_sort_vector_int_small>)
+
+add_executable(bucked_sort_vector_int_medium bucked_sort_vector_int_medium.cpp)
+target_link_libraries(bucked_sort_vector_int_medium dunmorogh)
+add_test(NAME BuckedSort_Vector_Int_Medium_10k_Test COMMAND $<TARGET_FILE:bucked_sort_vector_int_medium>)
+
+add_executable(bucked_sort_vector_int_big bucked_sort_vector_int_big.cpp)
+target_link_libraries(bucked_sort_vector_int_big dunmorogh)
+add_test(NAME BuckedSort_Vector_Int_Big_50k_Test COMMAND $<TARGET_FILE:bucked_sort_vector_int_big>)
+
+add_executable(bucked_sort_vector_int_huge bucked_sort_vector_int_huge.cpp)
+target_link_libraries(bucked_sort_vector_int_huge dunmorogh)
+add_test(NAME BuckedSort_Vector_Int_Huge_100k_Test COMMAND $<TARGET_FILE:bucked_sort_vector_int_huge>)
+
+add_executable(bucked_sort_vector_int_colossal bucked_sort_vector_int_colossal.cpp)
+target_link_libraries(bucked_sort_vector_int_colossal dunmorogh)
+add_test(NAME BuckedSort_Vector_Int_Colossal_1M_Test COMMAND $<TARGET_FILE:bucked_sort_vector_int_colossal>)

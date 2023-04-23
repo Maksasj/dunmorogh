@@ -8,4 +8,8 @@
 
 #include "utils.h"
 
+#include "noncomp/bucked.h"
+#include "noncomp/counting.h"
+#include "noncomp/radix.h"
+
 #endif

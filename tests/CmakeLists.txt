@@ -11,3 +11,5 @@ add_subdirectory(mergesort)
 add_subdirectory(gnomesort)
 add_subdirectory(dunmoroghsort)
 add_subdirectory(insertionsort)
+
+add_subdirectory(noncomp)
