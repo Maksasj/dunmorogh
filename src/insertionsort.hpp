@@ -8,8 +8,6 @@
 namespace dunmorogh {
     template<template<class ...> class C, class T>
     inline void _insertion_sort_iternal(C<T>& input, const std::function<bool(const T& a, const T& b)>& lambda, const i32& left, const i32& right) {
-        const u64 arraySize = input.size();
-
         for (i32 i = left + 1; i < right; ++i) {
             const T& key = input[i];
             i32 j = i - 1;

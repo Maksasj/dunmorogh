@@ -17,3 +17,6 @@ target_link_libraries(usage_example dunmorogh)
 
 add_executable(example_4 example_4.cpp)
 target_link_libraries(example_4 dunmorogh)
+
+add_executable(test test.cpp)
+target_link_libraries(test dunmorogh)

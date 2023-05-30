@@ -14,7 +14,7 @@ int main() {
         vector<int> data;
         generate_random_data(data, 50000);
 
-        radix_sort_lsd(data);
+        radix_sort_msd(data);
 
         ensure((is_container_sorted<int>(data, greater<int>())));
     }
