@@ -1,5 +1,5 @@
 # Dunmorogh
-Dunmorogh - simple c++ library, that implements some sorting such as insertion sort, merge sort, gnome sort, as well as introduces new hybrid sorting algortim named **dunmorogh sort**, that combines these three sorting algorithms. 
+Dunmorogh - simple c++ library, that implements some sorting algorithms such as insertion sort, merge sort, gnome sort, as well as introduces new hybrid sorting algortim named **dunmorogh sort**, that combines these three sorting algorithms. 
 
 > Note: This repository is not actively maintained, repository where made only for educational purposes.
 
