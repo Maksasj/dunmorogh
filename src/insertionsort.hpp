@@ -6,8 +6,8 @@
 #include "types.hpp"
 
 namespace dunmorogh {
-    template<template<class ...> class C, class T>
-    inline void _insertion_sort_iternal(C<T>& input, const std::function<bool(const T& a, const T& b)>& lambda, const i32& left, const i32& right) {
+    template<template<class ...> class C, class T, class L>
+    inline void _insertion_sort_iternal(C<T>& input, const L& lambda, const i32& left, const i32& right) {
         for (i32 i = left + 1; i < right; ++i) {
             const T& key = input[i];
             i32 j = i - 1;
@@ -21,8 +21,8 @@ namespace dunmorogh {
         }
     };
 
-    template<template<class ...> class C, class T>
-    void insertion_sort(C<T>& input, const std::function<bool(const T& a, const T& b)>& lambda) {
+    template<template<class ...> class C, class T, class L>
+    void insertion_sort(C<T>& input, const L& lambda) {
         _insertion_sort_iternal(input, lambda, 0, input.size());
     };
 }
